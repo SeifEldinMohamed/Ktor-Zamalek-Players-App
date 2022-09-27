@@ -1,4 +1,4 @@
-package com.seif.ktorzamalekplayersapp.ui.theme
+package com.seif.ktorzamalekplayersapp.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
