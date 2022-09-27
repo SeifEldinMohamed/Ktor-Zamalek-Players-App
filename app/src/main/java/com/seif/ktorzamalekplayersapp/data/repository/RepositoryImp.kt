@@ -14,6 +14,7 @@ class RepositoryImp @Inject constructor(
     ) : Repository {
     override fun fetchRandomPlayer(): Flow<Resource<Player>> = flow {
         emit(Resource.Loading())
+        kotlinx.coroutines.delay(1000)
         try {
             val response: Player = remoteDataSource.fetchRandomPlayer()
             emit(Resource.Success(response))

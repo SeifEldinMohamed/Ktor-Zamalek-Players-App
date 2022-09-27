@@ -4,7 +4,6 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.seif.ktorzamalekplayersapp.data.remote.dto.Player
 import com.seif.ktorzamalekplayersapp.domain.usecase.GetRandomPlayerUseCase
 import com.seif.ktorzamalekplayersapp.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -23,9 +22,9 @@ class HomeViewModel @Inject constructor(
     val state: State<PlayerState> = _state
 
     init {
-        getRandomRabbit()
+        getRandomPlayer()
     }
-    fun getRandomRabbit() {
+    fun getRandomPlayer() {
         viewModelScope.launch(Dispatchers.IO) {
             getRandomPlayerUseCase().onEach { response ->
                 when (response) {
