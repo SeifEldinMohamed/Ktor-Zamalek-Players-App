@@ -22,6 +22,9 @@ class HomeViewModel @Inject constructor(
     private val _state = mutableStateOf(PlayerState())
     val state: State<PlayerState> = _state
 
+    init {
+        getRandomRabbit()
+    }
     fun getRandomRabbit() {
         viewModelScope.launch(Dispatchers.IO) {
             getRandomPlayerUseCase().onEach { response ->
