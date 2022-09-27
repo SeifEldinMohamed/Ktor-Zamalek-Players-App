@@ -7,5 +7,5 @@ import retrofit2.http.GET
 
 interface PlayersApi {
     @GET("randomplayer")
-    suspend fun fetchRandomPlayer(): Response<Resource<Player>>
+    suspend fun fetchRandomPlayer(): Response<Player>
 }
